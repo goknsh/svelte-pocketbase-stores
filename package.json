@@ -1,13 +1,14 @@
 {
 	"name": "svelte-pocketbase-stores",
 	"description": "Async Svelte store wrappers around Pocketbase Realtime",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "svelte-kit sync && tsup",
 		"changeset": "changeset",
 		"prepare": "svelte-kit sync && husky install",
+		"release": "svelte-kit sync && tsup && changeset publish",
 		"commit": "commit",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
