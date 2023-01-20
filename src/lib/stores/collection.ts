@@ -76,15 +76,10 @@ export const collectionStore = <T extends Pick<Record, 'id'>>(
 			subscribe: store.subscribe
 		};
 	} else {
-		console.log('loading', collection.collectionIdOrName);
-
-		let unsubscribe: Unsubscriber = () => {
-			console.log('failed to unsubscribe', collection.collectionIdOrName);
-		};
+		let unsubscribe: Unsubscriber = () => {};
 
 		const unsubscribeStore = readable('unsubscribeStore', () => unsubscribe);
 
-		console.log('subscribing', collection.collectionIdOrName);
 		const store = asyncWritable<typeof unsubscribeStore, typeof result>(
 			unsubscribeStore,
 			async () =>
@@ -111,9 +106,7 @@ export const collectionStore = <T extends Pick<Record, 'id'>>(
 				  );
 
 		unsubscribe = () => {
-			console.log('unsubscribing', collection.collectionIdOrName);
 			(async () => await (await unsubscribePromise)())();
-			console.log('unsubscribingDone', collection.collectionIdOrName);
 		};
 
 		return {
@@ -202,15 +195,10 @@ export const paginatedCollectionStore = <T extends Pick<Record, 'id'>>(
 			prev: () => setPage(result.page - 1)
 		};
 	} else {
-		console.log('loading', collection.collectionIdOrName);
-
-		let unsubscribe: Unsubscriber = () => {
-			console.log('failed to unsubscribe', collection.collectionIdOrName);
-		};
+		let unsubscribe: Unsubscriber = () => {};
 
 		const unsubscribeStore = readable('unsubscribeStore', () => unsubscribe);
 
-		console.log('subscribing', collection.collectionIdOrName);
 		const store = asyncWritable<typeof unsubscribeStore, typeof result>(
 			unsubscribeStore,
 			async () =>
@@ -241,9 +229,7 @@ export const paginatedCollectionStore = <T extends Pick<Record, 'id'>>(
 				  );
 
 		unsubscribe = () => {
-			console.log('unsubscribing', collection.collectionIdOrName);
 			(async () => await (await unsubscribePromise)())();
-			console.log('unsubscribingDone', collection.collectionIdOrName);
 		};
 
 		const setPage = async (page: number) => {

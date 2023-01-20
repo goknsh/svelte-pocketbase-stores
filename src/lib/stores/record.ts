@@ -54,9 +54,7 @@ export const recordStore = <T extends Pick<Record, 'id'>>(
 			subscribe: store.subscribe
 		};
 	} else {
-		let unsubscribe: Unsubscriber = () => {
-			console.log('failed to unsubscribe', collection.collectionIdOrName);
-		};
+		let unsubscribe: Unsubscriber = () => {};
 
 		const unsubscribeStore = readable('unsubscribeStore', () => unsubscribe);
 
@@ -82,9 +80,7 @@ export const recordStore = <T extends Pick<Record, 'id'>>(
 			  );
 
 		unsubscribe = () => {
-			console.log('unsubscribing', collection.collectionIdOrName);
 			(async () => await (await unsubscribePromise)())();
-			console.log('unsubscribingDone', collection.collectionIdOrName);
 		};
 
 		return {
