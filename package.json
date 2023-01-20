@@ -1,11 +1,11 @@
 {
 	"name": "svelte-pocketbase-stores",
 	"description": "Async Svelte store wrappers around Pocketbase Realtime",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "tsup",
+		"build": "svelte-kit sync && tsup",
 		"changeset": "changeset",
 		"prepare": "husky install",
 		"commit": "commit",
@@ -84,5 +84,8 @@
 		"name": "Akaanksh Raj",
 		"email": "email@ark.black",
 		"url": "https://ark.black"
+	},
+	"publishConfig": {
+		"access": "public"
 	}
 }
