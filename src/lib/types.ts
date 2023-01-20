@@ -13,6 +13,10 @@ export interface PaginatedLoadable<T> extends Reloadable<T> {
 	prev: () => Promise<void>;
 }
 
+export interface KnownUser {
+	isLoggedIn: true;
+}
+
 export interface UnknownUser {
 	isLoggedIn: false;
 }

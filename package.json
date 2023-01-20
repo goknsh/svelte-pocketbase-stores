@@ -7,7 +7,7 @@
 		"dev": "vite dev",
 		"build": "svelte-kit sync && tsup",
 		"changeset": "changeset",
-		"prepare": "husky install",
+		"prepare": "svelte-kit sync && husky install",
 		"commit": "commit",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",

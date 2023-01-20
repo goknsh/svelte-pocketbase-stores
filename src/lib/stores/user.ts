@@ -2,7 +2,7 @@ import type Client from 'pocketbase';
 import type { BaseAuthStore, Record } from 'pocketbase';
 import { type Loadable, readable } from '@square/svelte-store';
 
-import { type UnknownUser, isRecord } from '../types';
+import { type KnownUser, type UnknownUser, isRecord } from '../types';
 
 /**
  * Svelte store wrapper around the authenticated user that updates in realtime.
@@ -13,14 +13,14 @@ import { type UnknownUser, isRecord } from '../types';
  * @param [extractKnownUser] Optional function to get only the properties you need from a logged in user.
  */
 export const userStore = <
-	KnownUser extends { isLoggedIn: true } = Record & { isLoggedIn: true },
+	CustomKnownUser extends KnownUser = Record & KnownUser,
 	CustomAuthStore extends BaseAuthStore = BaseAuthStore
 >(
 	pocketbase: Client,
-	extractKnownUser: (authStore: CustomAuthStore) => KnownUser = (authStore) =>
-		({ isLoggedIn: true, ...authStore.model } as KnownUser)
-): Loadable<KnownUser | UnknownUser> => {
-	return readable<KnownUser | UnknownUser>(
+	extractKnownUser: (authStore: CustomAuthStore) => CustomKnownUser = (authStore) =>
+		({ isLoggedIn: true, ...authStore.model } as CustomKnownUser)
+): Loadable<CustomKnownUser | UnknownUser> => {
+	return readable<CustomKnownUser | UnknownUser>(
 		pocketbase.authStore.model !== null &&
 			pocketbase.authStore.isValid &&
 			isRecord(pocketbase.authStore.model)
