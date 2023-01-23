@@ -8,7 +8,7 @@ specifiers:
   '@commitlint/prompt-cli': 17.4.2
   '@square/svelte-store': 1.0.13
   '@sveltejs/adapter-node': 1.1.4
-  '@sveltejs/kit': 1.2.1
+  '@sveltejs/kit': 1.2.5
   '@typescript-eslint/eslint-plugin': 5.48.2
   '@typescript-eslint/parser': 5.48.2
   autoprefixer: 10.4.13
@@ -41,8 +41,8 @@ devDependencies:
   '@commitlint/config-conventional': 17.4.2
   '@commitlint/prompt-cli': 17.4.2
   '@square/svelte-store': 1.0.13
-  '@sveltejs/adapter-node': 1.1.4_@sveltejs+kit@1.2.1
-  '@sveltejs/kit': 1.2.1_svelte@3.55.1+vite@4.0.4
+  '@sveltejs/adapter-node': 1.1.4_@sveltejs+kit@1.2.5
+  '@sveltejs/kit': 1.2.5_svelte@3.55.1+vite@4.0.4
   '@typescript-eslint/eslint-plugin': 5.48.2_caon6io6stgpr7lz2rtbhekxqy
   '@typescript-eslint/parser': 5.48.2_7uibuqfxkfaozanbtbziikiqje
   autoprefixer: 10.4.13_postcss@8.4.21
@@ -889,7 +889,7 @@ packages:
       svelte: 3.55.1
     dev: true
 
-  /@sveltejs/adapter-node/1.1.4_@sveltejs+kit@1.2.1:
+  /@sveltejs/adapter-node/1.1.4_@sveltejs+kit@1.2.5:
     resolution: {integrity: sha512-3iEBqi1fXLXP9YIbVuz2LXajoebRJCmAFEQbN40DlxAnA7G+InxUgnqFun3q9gBMz2Qvd99K51g/HxWetXRe8Q==}
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
@@ -897,12 +897,12 @@ packages:
       '@rollup/plugin-commonjs': 24.0.0_rollup@3.10.0
       '@rollup/plugin-json': 6.0.0_rollup@3.10.0
       '@rollup/plugin-node-resolve': 15.0.1_rollup@3.10.0
-      '@sveltejs/kit': 1.2.1_svelte@3.55.1+vite@4.0.4
+      '@sveltejs/kit': 1.2.5_svelte@3.55.1+vite@4.0.4
       rollup: 3.10.0
     dev: true
 
-  /@sveltejs/kit/1.2.1_svelte@3.55.1+vite@4.0.4:
-    resolution: {integrity: sha512-XSBgYm7GnL8lkVQtJlKkZ3yBRSagyE3tBWs7oOW3qzx6XYZx7n3atM/TiN8mBDJftT6OvmHUWSmYu1f35CEuTQ==}
+  /@sveltejs/kit/1.2.5_svelte@3.55.1+vite@4.0.4:
+    resolution: {integrity: sha512-etFW9EDYM03orFn0CHcgRMVwTNXjrwRX9TS8rACnJYQQI/BgNpmNmdCya8l2meY82PPfZaRLM4qzbZ56SZbzYQ==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     requiresBuild: true
@@ -923,7 +923,7 @@ packages:
       sirv: 2.0.2
       svelte: 3.55.1
       tiny-glob: 0.2.9
-      undici: 5.15.1
+      undici: 5.16.0
       vite: 4.0.4
     transitivePeerDependencies:
       - supports-color
@@ -4666,8 +4666,8 @@ packages:
       which-boxed-primitive: 1.0.2
     dev: true
 
-  /undici/5.15.1:
-    resolution: {integrity: sha512-XLk8g0WAngdvFqTI+VKfBtM4YWXgdxkf1WezC771Es0Dd+Pm1KmNx8t93WTC+Hh9tnghmVxkclU1HN+j+CvIUA==}
+  /undici/5.16.0:
+    resolution: {integrity: sha512-KWBOXNv6VX+oJQhchXieUznEmnJMqgXMbs0xxH2t8q/FUAWSJvOSr/rMaZKnX5RIVq7JDn0JbP4BOnKG2SGXLQ==}
     engines: {node: '>=12.18'}
     dependencies:
       busboy: 1.6.0
