@@ -1,5 +1,8 @@
 # svelte-pocketbase-stores
 
+> **Warning**
+> Package has been deprecated in favor of [`svelte-query-pocketbase`](https://github.com/goknsh/svelte-query-pocketbase)
+
 A set of asynchronous Svelte store wrappers for Pocketbase that update in realtime.
 
 ## Installation
